@@ -2508,7 +2508,7 @@ plant_standard
          [SYN_AFFECTED_CLASS:GENERAL_POISON]
          [SYN_INGESTED]
             [CE_PHYS_ATT_CHANGE:DISEASE_RESISTANCE:2500:0:START:0:END:133600]
-
+			
 " epidemics
 
 [SYNDROME]

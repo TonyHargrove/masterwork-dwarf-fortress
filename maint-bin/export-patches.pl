@@ -19,10 +19,14 @@ my $EXCLUDED_FILES_RE = qr{
     \.gitignore$|
     \.yoinkrc$|
     \.mailmap$|
+    dfhack.history$|
+    gamelog.txt$|
+    stderr.log$|
+    stdout.log$|
     Settings[ ]Source
 }msx;
 
-my @BRANCHES = qw(master unified);
+my @BRANCHES = qw(master unified orc_rebalance);
 
 # Remember what branch we're on now
 my $now_branch = capture('git rev-parse --abbrev-ref HEAD');
@@ -63,10 +67,10 @@ sub make_patch_from_branch {
     systemx('git','checkout',$branch);
 
     # Find all the files different from upstream
-    my @changed_files = capture("git diff $UPSTREAM --name-only");
+    my @changed_files = capture("git diff $UPSTREAM --name-only -b");
     chomp(@changed_files);
 
-    # Filter out things we shouldn't be packagig.
+    # Filter out things we shouldn't be packaging.
     my @to_package = grep { not m{$EXCLUDED_FILES_RE} } @changed_files;
 
     # Write our patch-log

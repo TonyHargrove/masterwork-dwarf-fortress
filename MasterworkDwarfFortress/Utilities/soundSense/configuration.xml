@@ -7,7 +7,7 @@
 	
 	<soundpacks allowOverride="true" defaultPath="./packs/" noWarnAbsolutePath="false"/>
 	
-	<volume value="0.0"/>
+	<volume value="-2.0"/>
 	
 	<gui value="true"/>
 	
@@ -22,7 +22,7 @@
 	<autoUpdateReplaceFiles value="true"/>
 	<autoUpdateDeleteFiles value="false"/>
 
-	<disabledSounds />
+	<disabledSounds/>
 
 	<mutedChannels/>
 
